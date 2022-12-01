@@ -1,12 +1,7 @@
 class Reto_5
 
-  attr_writer :file_name
 
-  def initialize(file_name)
-    @file_name = file_name
-  end
-
-  def read_file(file_name)
+  def reto(file_name)
     questions_list = []
     question = {}
     answer = {}
@@ -23,23 +18,16 @@ class Reto_5
         end
       end
     end
-    @questions_list = questions_list
-    return @questions_list
-  end
 
-
-
-
-  def reto5(questions = @questions_list)
     puts 'Bienvenido a reto 5, Para jugar, solo ingresa el termino correcto para cada una de las definiciones, Listo? Vamos!'
 
     i=0
-    while  i < questions.length
+    while  i < questions_list.length
       puts 'Definición'
-      puts questions[i][:definition]
+      puts questions_list[i][:definition]
       print 'Adivina: '
       ans = gets.chomp.upcase
-      while ans != questions[i][:answer].upcase
+      while ans != questions_list[i][:answer].upcase
         puts 'Incorrecto!, Trata de nuevo'
         print 'Adivina: '
         ans = gets.chomp.upcase
@@ -47,15 +35,10 @@ class Reto_5
       puts 'Correcto!'
       i += 1
     end
-    puts 'Felicidades! Has ganado!'
-
-
+    puts 'Felicidades! Has terminado este reto!'
   end
-
-
-
 
 end
 
-reto_5 = Reto_5.new('preguntas.txt')
-reto_5.reto5
+reto_5 = Reto_5.new
+reto_5.reto('preguntas.txt')
