@@ -1,0 +1,18 @@
+class Cat
+
+  attr_reader :name, :age
+
+  def initialize(name, age)
+    @name  = name
+    @age = age
+  end
+
+  def meow
+    puts "I'm a cat, gimme food & pet me now!"
+  end
+end
+
+cat = Cat.new("Rogelio","3 years old")
+
+cat.meow
+puts("Te cat's name is #{cat.name}, and its age is #{cat.age}.")

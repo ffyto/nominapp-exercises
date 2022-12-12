@@ -1,0 +1,12 @@
+def save_tasks(file_name, array)
+  File.open(file_name, 'w') do |line|
+    array.each do |element|
+      line.write("#{element[:id]},#{element[:name]},#{element[:done]}\n")
+    end
+  end
+end
+
+save_tasks('tasks.txt', [
+  { id: 1, name: "Hacer tareas", done: true },
+  { id: 2, name: "Lavar ropa", done: false }
+])

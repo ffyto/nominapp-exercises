@@ -1,0 +1,17 @@
+def load_tasks(file_name)
+  array = []
+  hash = {}
+  if File.file?(file_name)
+    File.readlines(file_name, chomp: true).each do |line|
+      elements = line.split(',')
+      hash = {id: elements[0].to_i, name: elements[1], done: elements[2] == "true"}
+      array.push(hash)
+    end
+  end
+  return array
+end
+
+puts load_tasks("test3.txt")
+
+
+

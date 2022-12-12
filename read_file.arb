@@ -1,0 +1,11 @@
+def read(file_name)
+  if File.exists?(file_name) #or File.file? also works
+    file = File.open(file_name) #there is no need to open the file. With File.read is enough
+    file_content = file.read
+    file.close #This is optional
+    return file_content
+  end
+  nil
+end
+
+puts read('test1.txt')

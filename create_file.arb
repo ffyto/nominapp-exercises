@@ -1,0 +1,5 @@
+def write(name, str)
+  File.open(name, 'w') { |file| file.write(str) }
+end
+
+write("test3.txt", "Hola mundo")

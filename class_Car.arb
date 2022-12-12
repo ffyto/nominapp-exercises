@@ -1,0 +1,33 @@
+class Car
+
+  attr_reader :velocity
+
+  def initialize
+    @velocity = 0
+  end
+
+  def accelerate(acc = 1)
+    @velocity += acc
+  end
+
+  def brake(acc = 1)
+    @velocity -= acc
+  end
+
+end
+
+car = Car.new
+puts car.velocity # => 0
+
+car.accelerate
+puts car.velocity # => 1
+
+car.accelerate(2)
+puts car.velocity # => 3
+
+car.brake
+puts car.velocity # => 2
+
+car.brake(2)
+puts car.velocity # => 0
+
