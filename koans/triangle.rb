@@ -17,21 +17,23 @@ def triangle(a, b, c)
 
   raise TriangleError if [a,b,c].min <= 0
 
-  l_1, l_2, l_3 = [a,b,c].sort
-  raise TriangleError if l_1 + l_2 <= l_3
+  side1, side2, side3 = [a,b,c].sort
+  raise TriangleError if side1 + side2 <= side3
+
+  result = ""
 
   if a == b && b == c
-    return :equilateral
+    result = :equilateral
   end
 
   if a == b && a != c || a == c && a != b || b == c && b != a
-    return :isosceles
+    result = :isosceles
   end
 
   if a != b &&  a != c && b != c
-    return :scalene
+    result = :scalene
   end
-
+  result
 end
 
 # Error class used in part 2.  No need to change this code.
